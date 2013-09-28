@@ -1,0 +1,20 @@
+//Written in C
+//Euler Problem 2 (Even Fibbonaci Numbers)
+
+#include<stdio.h>
+#include<conio.h>
+
+main(){
+       long a=1,b=2,sum=0; //long because 4,000,000 is beyond the range of int
+       
+       while(b<4000000){
+                           if(b%2==0) // to check if it's even
+                                     sum+=b; //if it's even add to sum
+                           b=b+a; // replace b with b+a
+                           a=b-a; // replace a with the value of b before it was changed in the last step
+       }
+       printf("%ld",sum); // print the result = 4,613,732
+       getch();
+}
+       
+
