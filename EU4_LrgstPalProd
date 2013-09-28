@@ -1,0 +1,24 @@
+#Python 2.7
+#Euler Problem 4 (Largest Palindrome Product)
+def checkPal(i):
+    iInString=str(i)
+    revString=iInString[::-1]   #[::-1] is a slice where -1 means moving backwards
+
+    if(revString==iInString):   #checking if it's a palindrome or not
+        return 1
+    else:
+        return 0
+
+cval=999*999 #999*999 is the largest number formed by the product of 3-digit numbers
+FLAG=0
+while(cval>=100*100): #100*100 is the smallest number formed by the product of 2 3 digit numbers
+    if(checkPal(cval)):
+        FLAG=1
+        break
+    else:
+        cval=cval-1
+if(FLAG):
+    print cval
+else:
+    print "No such number exists"
+
