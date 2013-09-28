@@ -1,0 +1,31 @@
+#Code written in Python 2.7
+#Euler Problem 9
+#Pythagorean Triplet a+b+c=1000
+
+#using the fact that if (a,b,c) is a triplet then (ka,kb,kc) is also a triplet
+
+i=2
+FLAG=0
+while(i<1000):
+    if(1000%i==0):
+        a=1
+        while(a<i):
+            b=1
+            while(b<i):                
+                c=i-a-b
+                if(c<b) or (c<a):
+                    break
+                if(c**2==a**2+b**2):
+                    FLAG=1
+                    break
+                b=b+1
+            if(FLAG):
+                break
+            if(c<a):
+                break
+            a=a+1
+    if(FLAG):
+        break
+    i=i+1
+j=1000/i
+print "a=",a*j,'\nb=',b*j,'\nc=',c*j
