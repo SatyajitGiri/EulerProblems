@@ -1,0 +1,9 @@
+#Python 2.7
+#Euler Problem 6 (Sum Square Difference)
+
+
+n=100
+print ((n*(n+1)/2)**2)-(n*(n+1)*(2*n+1)/6)
+
+#Sum of '1+2+3+...+n' terms is (n)(n+1)/2
+#Sum of '1**2+2**2+3**2+...+n**2' terms is (n)(n+1)(2n+1)/6
