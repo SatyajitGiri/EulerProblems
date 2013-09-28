@@ -1,0 +1,33 @@
+//Written using C
+//Euler Problem 7(1001st prime no)
+
+#include<stdio.h>
+#include<conio.h>
+
+main(){
+       int lp[1001]; //stores 1001 primes
+       int npd=1; //no  of primes discovered
+       int i, j, FLAG=0;
+       lp[0]=2;
+       //printf("%d\t%d\n",npd,lp[npd-1]);
+       
+       for(i=3;npd<1001;i++){
+                             FLAG=0; //otherwise, FLAG remains equal to 1 once set there
+                             for(j=0;j<npd;j++){
+                                                if((i%lp[j])==0){    //dividing each no by all the prime no that preceded it
+                                                                 FLAG=1;
+                                                                 break;
+                                                                 }
+                                                }
+                            
+                             if(FLAG==0){
+                                         lp[npd]=i;
+                                         npd++;
+                                         //printf("%d\t%d\n",npd,lp[npd-1]);
+                                         }
+                             }
+       printf("1001st prime no is %d",lp[1000]);
+       getch();
+       }
+                                        
+             
