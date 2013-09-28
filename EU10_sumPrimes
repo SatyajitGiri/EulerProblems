@@ -1,0 +1,23 @@
+#Code is written in Python 2.7
+#Euler Problem No. 10 (Summation Of Primes)
+#To find sum of all primes below 2 million
+
+lPrime=[]
+lPrime.append(2)
+count=1
+i=3
+sumPrime=2
+while(i<2000000):
+    j=0
+    FLAG=1      #Assuming i is a prime number
+    while(lPrime[j]<=(i**.5)) and (j<count):
+        if(i%lPrime[j]==0):
+            FLAG=0
+            break
+        j=j+1
+    if(FLAG):
+        lPrime.append(i)
+        count=count+1
+        sumPrime=sumPrime+i
+    i=i+1
+print sumPrime
