@@ -1,0 +1,31 @@
+#Python 2.7
+#Euclid's Problem 5 (Smallest Multiple)
+
+def GCF(a,b):
+    if(b>a):
+        a=b+a
+        b=a-b #b+a-b=a
+        a=a-b #b+a-a=b
+    
+    if(b==0):
+        return a
+    else:           #Euclid's formula
+        c=a%b
+        a=b
+        b=c
+        return GCF(a,b)
+def LCM(a,b):
+    return a*b/GCF(a,b) #a*b=LCM*GCF
+
+
+a = LCM(1,2)
+i = 3
+while(i<=20):         #Smallest Multiple = LCM(1,2,3,....,20)
+    a=LCM(a,i)
+    i=i+1
+
+print a
+
+        
+        
+    
